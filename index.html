@@ -68,7 +68,7 @@
     <div class="container mx-auto px-4 py-8 md:max-w-4xl lg:max-w-6xl">
         <!-- 상단 내비게이션 -->
         <nav class="flex justify-center py-4 mb-20 md:mb-40">
-            <div class="flex items-center space-x-4 p-2 bg-gray-800 rounded-full shadow-lg">
+            <div class="items-center space-x-4 p-2 bg-gray-800 rounded-full shadow-lg hidden sm:flex">
                 <a href="#home" class="text-white text-lg font-bold px-4">Portfolio</a>
                 <div class="h-8 border-l border-gray-600"></div>
                 <div class="flex items-center space-x-2 text-gray-400" id="nav-menu">
@@ -78,13 +78,22 @@
                     <a href="#contact" class="nav-link px-4 py-2 rounded-full text-sm transition-all border-2 border-transparent hover:border-gray-500 hover:text-white">Contact</a>
                 </div>
             </div>
+            <!-- 모바일 내비게이션 -->
+            <div class="sm:hidden flex items-center bg-gray-800 rounded-full p-2 shadow-lg">
+                <a href="#home" class="nav-link p-2 rounded-full font-semibold text-sm transition-all border-2 border-transparent hover:border-gray-500 hover:text-white"><i class="fas fa-home"></i></a>
+                <a href="#about" class="nav-link p-2 rounded-full text-sm transition-all border-2 border-transparent hover:border-gray-500 hover:text-white"><i class="fas fa-user"></i></a>
+                <a href="#projects" class="nav-link p-2 rounded-full text-sm transition-all border-2 border-transparent hover:border-gray-500 hover:text-white"><i class="fas fa-tasks"></i></a>
+                <a href="#contact" class="nav-link p-2 rounded-full text-sm transition-all border-2 border-transparent hover:border-gray-500 hover:text-white"><i class="fas fa-envelope"></i></a>
+            </div>
         </nav>
 
         <!-- 프로필 섹션 -->
         <header id="home" class="flex flex-col items-center text-center mb-20 md:mb-40">
+            <!-- 사용자가 요청한 이미지 추가 -->
             <div class="flex justify-center mb-8 w-full max-w-6xl">
-                <img src="중ᄋ0529_2.jpg" alt="디자인 포트폴리오 이미지" class="w-full h-auto object-cover rounded-md shadow-lg">
+                <img src="https://my-portfolio-chib-drab-84.vercel.app/중앙사진.jpg" alt="메인 포트폴리오 이미지" class="w-full h-auto object-cover rounded-md shadow-lg">
             </div>
+            <!-- 버튼 및 소셜 미디어 아이콘 -->
             <div class="flex justify-center space-x-4 mb-10">
                 <a href="#projects" class="action-button bg-white text-black px-6 py-3 rounded-full font-semibold hover:bg-gray-200 transition-colors">프로젝트 보기</a>
             </div>
