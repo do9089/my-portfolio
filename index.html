@@ -1,328 +1,146 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Portfolio</title>
+<head>
+    <!-- 웹페이지 기본 설정 -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>당신의 이름 - 포트폴리오</title>
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&amp;display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet"
-    />
+    <!-- Font Awesome 아이콘 CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-      body {
-        font-family: "Noto Sans KR", sans-serif;
-        background-color: #000000;
-        color: #ffffff;
-      }
-      .container {
-        max-width: 1200px;
-        margin: 0 auto;
-        padding: 0 2rem;
-      }
+        /* Inter 폰트 적용 */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #000000;
+            color: #d1d5db; /* gray-300 */
+        }
+        /* 마우스 오버 시 위로 살짝 올라오는 효과 */
+        .hover-lift {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+        .hover-lift:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        /* QR 코드 배경색 */
+        .qr-bg {
+            background-color: #262626;
+        }
     </style>
-  </head>
-  <body>
-    <header
-      class="fixed top-0 left-0 right-0 z-50 bg-black bg-opacity-80 backdrop-blur-sm"
-    >
-      <div class="container mx-auto flex justify-between items-center h-16">
-        <a class="text-xl font-bold" href="#">Portfolio</a>
-        <nav class="hidden md:flex items-center space-x-8">
-          <a class="text-sm" href="#">소개</a>
-          <a class="text-sm" href="#">프로젝트</a>
-          <a class="text-sm" href="#">연락처</a>
+</head>
+<body class="bg-black text-gray-300">
+    <div class="container mx-auto px-4 py-8 md:max-w-4xl lg:max-w-6xl">
+        <!-- 상단 내비게이션 -->
+        <nav class="flex justify-between items-center py-4 mb-20 md:mb-40">
+            <div class="flex items-center space-x-6 text-gray-400">
+                <div class="bg-gray-800 text-white px-4 py-2 rounded-full font-semibold text-sm">홈</div>
+                <a href="#about" class="hover:text-white transition-colors">소개</a>
+                <a href="#projects" class="hover:text-white transition-colors">프로젝트</a>
+                <a href="#contact" class="hover:text-white transition-colors">연락</a>
+            </div>
+            <div class="text-white text-lg font-bold">Portfolio</div>
         </nav>
-        <div class="flex items-center space-x-4">
-          <button
-            class="w-8 h-8 rounded-full bg-gray-800 flex items-center justify-center"
-          >
-            <span class="material-icons text-sm">dark_mode</span>
-          </button>
-        </div>
-      </div>
-    </header>
-    <main>
-      <section class="pt-32 pb-24">
-        <div
-          class="container mx-auto flex flex-col md:flex-row items-center justify-between"
-        >
-          <div class="md:w-1/2 text-center md:text-left">
-            <p class="text-gray-400">안녕하세요,</p>
-            <h1 class="text-5xl font-bold my-4">당신의 이름</h1>
-            <p class="text-gray-300 mb-8">
-              창의적인 아이디어로 웹 경험을 디자인합니다.
-            </p>
-            <div
-              class="flex items-center space-x-4 justify-center md:justify-start"
-            >
-              <button
-                class="bg-white text-black px-6 py-2 rounded-md font-medium"
-              >
-                프로젝트 보기
-              </button>
-              <a
-                class="w-10 h-10 rounded-full border border-gray-600 flex items-center justify-center"
-                href="#"
-              >
-                <span class="material-icons text-xl">link</span>
-              </a>
-              <a
-                class="w-10 h-10 rounded-full border border-gray-600 flex items-center justify-center"
-                href="#"
-              >
-                <span class="material-icons text-xl">add</span>
-              </a>
-            </div>
-          </div>
-          <div class="md:w-1/2 flex justify-center mt-12 md:mt-0">
-            <div class="w-64 h-64 rounded-full bg-gray-700"></div>
-          </div>
-        </div>
-      </section>
-      <section class="py-24 bg-black" id="about">
-        <div class="container mx-auto text-center">
-          <h2 class="text-3xl font-bold mb-4">소개</h2>
-          <p class="text-gray-400 mb-12">
-            당신에 전문성과 열정을 소개해주세요.
-          </p>
-          <div class="grid md:grid-cols-3 gap-8 mb-12">
-            <div class="bg-gray-900 p-6 rounded-lg text-left">
-              <div class="flex items-center mb-4">
-                <span class="material-icons mr-3">school</span>
-                <h3 class="font-bold">학력</h3>
-              </div>
-              <p class="text-sm text-gray-400">OO대학교 - 학사</p>
-              <p class="text-sm text-gray-400">2016 - 2020</p>
-            </div>
-            <div class="bg-gray-900 p-6 rounded-lg text-left">
-              <div class="flex items-center mb-4">
-                <span class="material-icons mr-3">work</span>
-                <h3 class="font-bold">경력</h3>
-              </div>
-              <p class="text-sm text-gray-400">OO회사 - 인턴</p>
-              <p class="text-sm text-gray-400">2020 - 2021</p>
-            </div>
-            <div class="bg-gray-900 p-6 rounded-lg text-left">
-              <div class="flex items-center mb-4">
-                <span class="material-icons mr-3">military_tech</span>
-                <h3 class="font-bold">기타/자격증</h3>
-              </div>
-              <p class="text-sm text-gray-400">정보처리기사</p>
-              <p class="text-sm text-gray-400">2021.03</p>
-            </div>
-          </div>
-          <h3 class="text-2xl font-bold mb-8">핵심 역량</h3>
-          <div class="grid md:grid-cols-3 gap-8 mb-12">
-            <div class="p-6 rounded-lg">
-              <span class="material-icons text-4xl mb-4">code</span>
-              <h4 class="font-bold mb-2">프론트엔드 개발</h4>
-              <p class="text-sm text-gray-400">
-                React, TypeScript, Next.js를 활용한 유지 및 개발
-              </p>
-            </div>
-            <div class="p-6 rounded-lg">
-              <span class="material-icons text-4xl mb-4">storage</span>
-              <h4 class="font-bold mb-2">백엔드</h4>
-              <p class="text-sm text-gray-400">
-                Node.js, Python, MariaDB로 설계 및 구현
-              </p>
-            </div>
-            <div class="p-6 rounded-lg">
-              <span class="material-icons text-4xl mb-4">design_services</span>
-              <h4 class="font-bold mb-2">UI/UX 디자인</h4>
-              <p class="text-sm text-gray-400">
-                사용자 중심의 프로토타이핑 디자인
-              </p>
-            </div>
-          </div>
-          <div class="bg-gray-900 p-8 rounded-lg text-left max-w-4xl mx-auto">
-            <h3 class="text-xl font-bold mb-6">나의 이야기</h3>
-            <p class="text-gray-400 mb-4">
-              사용자 경험을 개선하며 사용자의 삶의 질 향상에 기여하는 것에 보람
-              있는 삶의 경험을 가지고 있습니다.
-            </p>
-            <p class="text-gray-400 mb-4">
-              문제 해결 능력을 통해 실제 문제를 분석하고 효과적인 시스템을
-              기획했으며, 기술적인 역량을 활용해 실제 제품을 구현하는 경험이
-              있습니다.
-            </p>
-            <p class="text-gray-400">
-              앞으로도 지속적인 학습과 도전을 통해 더 나은 개발자가 되기 위해
-              노력하겠습니다.
-            </p>
-          </div>
-          <div class="mt-12">
-            <h3 class="text-2xl font-bold mb-8">취미 &amp; 관심사</h3>
-            <div class="flex justify-center space-x-4 flex-wrap gap-2">
-              <span class="bg-gray-800 px-4 py-2 rounded-full text-sm"
-                >독서</span
-              >
-              <span class="bg-gray-800 px-4 py-2 rounded-full text-sm"
-                >카페 투어</span
-              >
-              <span class="bg-gray-800 px-4 py-2 rounded-full text-sm"
-                >맛집 탐방</span
-              >
-              <span class="bg-gray-800 px-4 py-2 rounded-full text-sm"
-                >여행</span
-              >
-            </div>
-          </div>
-        </div>
-      </section>
-      <section class="py-24" id="projects">
-        <div class="container mx-auto text-center">
-          <h2 class="text-3xl font-bold mb-4">프로젝트</h2>
-          <div class="my-16">
-            <img
-              alt="Rocket icon"
-              class="mx-auto w-24 h-24"
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBiOjE-3PyshM3UpvIoFe2iv0_Z70XH4D1TH0ilNLtelFX1jkB4JXtuzyR0TsiBOr_P0dOXJCZ-90FZ2wcAWLyNdKrHzD9LqVvSY5QyAUDQz7FF3uvpaDy9oQ-nYlOblsTJlJfVvYqZUmlv5aV29U7EBOZxAr6lPAwbkdzD21QF3TegLOWzt0zIFnf9l9MF6CDiRExp8zYfxkm9e1TOB_8CNVQMi8wSHRwopyQk80z-uyWuec6C81N2n9HOEAkGDuOVdiwpwKaS5GY"
-            />
-            <p class="text-gray-400 mt-4">준비 중입니다.</p>
-          </div>
-        </div>
-      </section>
-      <section class="py-24 bg-black" id="contact">
-        <div class="container mx-auto text-center">
-          <h2 class="text-3xl font-bold mb-4">연락처</h2>
-          <p class="text-gray-400 mb-12">
-            프로젝트 문의나 협업 제안을 기다리고 있습니다. 편하신 방법으로
-            연락주세요!
-          </p>
-          <div
-            class="flex flex-col md:flex-row justify-center items-start gap-12"
-          >
-            <div class="text-left space-y-6">
-              <h3 class="font-bold text-lg">프로필 정보</h3>
-              <div class="flex items-center">
-                <div
-                  class="w-12 h-12 rounded-full bg-gray-800 flex items-center justify-center mr-4"
-                >
-                  <span class="material-icons">person</span>
+
+        <!-- 프로필 섹션 -->
+        <header class="grid md:grid-cols-2 gap-8 items-center mb-20 md:mb-40">
+            <div class="text-center md:text-left">
+                <p class="text-xl md:text-2xl font-normal mb-2 text-gray-400">안녕하세요,</p>
+                <h1 class="text-5xl md:text-7xl font-bold mb-4 text-white">당신의 이름</h1>
+                <p class="text-2xl md:text-3xl font-semibold mb-4 text-gray-300">프론트엔드 개발자</p>
+                <p class="text-md text-gray-400 mb-8">창의적인 아이디어로 웹 경험을 디자인합니다.</p>
+                <div class="flex justify-center md:justify-start space-x-4 mb-10">
+                    <a href="#projects" class="bg-white text-black px-6 py-3 rounded-full font-semibold hover:bg-gray-200 transition-colors">프로젝트 보기</a>
                 </div>
-                <div>
-                  <p class="font-semibold">당신의 이름</p>
-                  <p class="text-sm text-gray-400">
-                    궁금한 것은 무엇이든 물어보세요
-                  </p>
+                <div class="flex justify-center md:justify-start space-x-4">
+                    <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 text-white hover:bg-gray-700 transition-colors">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 text-white hover:bg-gray-700 transition-colors">
+                        <i class="fab fa-youtube"></i>
+                    </a>
                 </div>
-              </div>
-              <div class="flex items-start">
-                <span class="material-icons text-gray-400 mt-1 mr-4">call</span>
-                <div>
-                  <p class="font-semibold">연락처</p>
-                  <p class="text-sm text-gray-400">010-0000-0000</p>
-                </div>
-              </div>
-              <div class="flex items-start">
-                <span class="material-icons text-gray-400 mt-1 mr-4"
-                  >email</span
-                >
-                <div>
-                  <p class="font-semibold">이메일</p>
-                  <p class="text-sm text-gray-400">your-email@example.com</p>
-                </div>
-              </div>
-              <div class="flex items-start">
-                <span class="material-icons text-gray-400 mt-1 mr-4">home</span>
-                <div>
-                  <p class="font-semibold">활동 지역</p>
-                  <p class="text-sm text-gray-400">성남시 분당구</p>
-                </div>
-              </div>
-              <div class="flex items-start">
-                <span class="material-icons text-gray-400 mt-1 mr-4"
-                  >schedule</span
-                >
-                <div>
-                  <p class="font-semibold">활동 시간</p>
-                  <p class="text-sm text-gray-400">평일 09:00 ~ 18:00</p>
-                </div>
-              </div>
-              <div class="flex items-start">
-                <span class="material-icons text-gray-400 mt-1 mr-4">chat</span>
-                <div>
-                  <p class="font-semibold">소셜 미디어</p>
-                  <p class="text-sm text-gray-400">
-                    소셜 미디어 주소를 추가해주세요.
-                  </p>
-                </div>
-              </div>
             </div>
-            <div class="bg-gray-900 p-8 rounded-lg">
-              <h3 class="font-bold text-lg text-left mb-4">
-                QR 코드로 연락처 저장
-              </h3>
-              <div class="bg-white p-4 rounded-md">
-                <img
-                  alt="QR code"
-                  class="w-64 h-64"
-                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAci1XxTFLCW6wh1GQVNqLJsNlB6lbO8N0iNWATPZ5LfBbtHgnqXiQSTgDHDLcr4_rc8V9zaXaZnoobxFHxGG1p5OLrR13ktEs5m2GHWPH-LaMUGjCCbmgwOYtY6rnXDZiGXDl9Lo460Kk5g0VHRZd8KIL2iirmIFLUXg2Z-Tb_cL8jNKFXx2SFVs4Yx96lzV8tpl8XAGFr-3xqjbaMNcs42CSJpJAO7n0a4F_CBJq_eCmm0o-8O7UB4DmMQ6Xj4CBxyEaHlVX4qTw"
-                />
-              </div>
-              <button
-                class="w-full mt-4 bg-gray-800 text-white py-2 rounded-md text-sm"
-              >
-                스마트폰으로 QR 코드를 스캔하여 연락처 정보를 확인해보세요
-              </button>
+            <div class="flex justify-center md:justify-end">
+                <div class="w-64 h-64 md:w-80 md:h-80 rounded-full bg-gray-800 shadow-xl border-4 border-gray-700"></div>
             </div>
-          </div>
-          <div
-            class="mt-16 bg-gray-900 p-6 rounded-lg max-w-4xl mx-auto flex justify-between items-center"
-          >
-            <div>
-              <p class="font-bold">함께 성장하는 파트너가 되겠습니다</p>
-              <p class="text-sm text-gray-400">
-                고객 중심의 성공적인 프로젝트로 보답해 드릴 것을 약속드립니다.
-              </p>
-            </div>
-            <button
-              class="bg-white text-black px-6 py-2 rounded-md font-medium text-sm whitespace-nowrap"
-            >
-              연락하기
-            </button>
-          </div>
-        </div>
-      </section>
-    </main>
-    <footer class="py-8 border-t border-gray-800">
-      <div
-        class="container mx-auto flex flex-col md:flex-row justify-between items-center text-sm"
-      >
-        <div class="text-gray-400 mb-4 md:mb-0">
-          <p>ⓒ 2024 당신의 이름. All rights reserved.</p>
-          <p class="mt-2">
-            Made with <span class="text-red-500">&lt;</span>3 by yourname
-          </p>
-        </div>
-        <div class="flex space-x-8">
-          <div>
-            <h4 class="font-bold mb-2">바로가기 링크</h4>
-            <a class="block text-gray-400 hover:text-white" href="#"
-              >프로젝트</a
-            >
-            <a class="block text-gray-400 hover:text-white" href="#">소개</a>
-          </div>
-          <div>
-            <h4 class="font-bold mb-2">연락처</h4>
-            <p class="text-gray-400">your-email@example.com</p>
-            <a class="text-gray-400 hover:text-white" href="#">연락처 보기</a>
-          </div>
-        </div>
-        <div class="flex items-center space-x-2">
-          <a class="text-gray-400 hover:text-white" href="#">Privacy</a>
-          <span>|</span>
-          <a class="text-gray-400 hover:text-white" href="#"
-            >Terms of service</a
-          >
-        </div>
-      </div>
-    </footer>
-  </body>
+        </header>
+        
+        <main class="space-y-24">
+            <!-- 소개 섹션 -->
+            <section id="about" class="text-center">
+                <h2 class="text-3xl font-bold mb-12 text-white">소개</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="flex flex-col items-center bg-[#1a1a1a] p-6 rounded-2xl hover-lift">
+                        <i class="fas fa-home text-4xl mb-4 text-gray-500"></i>
+                        <h3 class="text-lg font-semibold mb-2">집</h3>
+                        <p class="text-gray-400">도시명을 입력하세요.</p>
+                    </div>
+                    <div class="flex flex-col items-center bg-[#1a1a1a] p-6 rounded-2xl hover-lift">
+                        <i class="fas fa-calendar-alt text-4xl mb-4 text-gray-500"></i>
+                        <h3 class="text-lg font-semibold mb-2">날짜</h3>
+                        <p class="text-gray-400">날짜를 입력하세요.</p>
+                    </div>
+                    <div class="flex flex-col items-center bg-[#1a1a1a] p-6 rounded-2xl hover-lift">
+                        <i class="fas fa-users text-4xl mb-4 text-gray-500"></i>
+                        <h3 class="text-lg font-semibold mb-2">팀</h3>
+                        <p class="text-gray-400">팀 이름을 입력하세요.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- 프로젝트 섹션 -->
+            <section id="projects" class="text-center">
+                <h2 class="text-3xl font-bold mb-12 text-white">프로젝트</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-[#1a1a1a] p-8 rounded-2xl hover-lift flex flex-col items-center text-center">
+                        <div class="w-16 h-16 mb-4 rounded-full bg-gray-800 flex items-center justify-center">
+                            <i class="fas fa-rocket text-xl text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2 text-white">첫 번째 프로젝트</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            여기에 프로젝트에 대한 상세한 설명을 입력하세요. 사용한 기술, 달성한 성과 등을 자세히 적으면 좋아요.
+                        </p>
+                    </div>
+                    <div class="bg-[#1a1a1a] p-8 rounded-2xl hover-lift flex flex-col items-center text-center">
+                        <div class="w-16 h-16 mb-4 rounded-full bg-gray-800 flex items-center justify-center">
+                            <i class="fas fa-star text-xl text-white"></i>
+                        </div>
+                        <h3 class="text-xl font-semibold mb-2 text-white">두 번째 프로젝트</h3>
+                        <p class="text-gray-400 text-sm leading-relaxed">
+                            두 번째 프로젝트에 대한 설명을 입력하세요. 마찬가지로 프로젝트의 목표와 결과를 상세하게 적어주세요.
+                        </p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- 연락처 섹션 -->
+            <section id="contact" class="text-center">
+                <h2 class="text-3xl font-bold mb-12 text-white">연락처</h2>
+                <div class="grid md:grid-cols-2 gap-8">
+                    <div class="bg-[#1a1a1a] p-8 rounded-2xl flex flex-col items-center hover-lift">
+                        <div class="w-24 h-24 mb-4 rounded-full bg-gray-800"></div>
+                        <h3 class="text-xl font-semibold mb-2 text-white">당신의 이름</h3>
+                        <ul class="space-y-2 text-gray-400 text-left">
+                            <li><i class="fas fa-phone mr-2"></i> 전화번호</li>
+                            <li><i class="fas fa-envelope mr-2"></i> 이메일 주소</li>
+                            <li><i class="fas fa-map-marker-alt mr-2"></i> 위치</li>
+                        </ul>
+                    </div>
+                    <div class="bg-[#1a1a1a] p-8 rounded-2xl flex flex-col items-center hover-lift qr-bg">
+                        <h3 class="text-xl font-semibold mb-4 text-white">QR 코드</h3>
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=your-contact-info" alt="연락처 QR 코드" class="rounded-lg border-2 border-gray-600">
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- 푸터 -->
+        <footer class="text-center text-gray-500 text-sm mt-20">
+            &copy; 2024 Your Name. All Rights Reserved.
+        </footer>
+    </div>
+</body>
 </html>
